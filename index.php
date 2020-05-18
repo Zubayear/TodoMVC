@@ -78,6 +78,14 @@ $obj = new Tasks();
     <script src="js/jquery-3.2.1.min.js"></script>
 
     <script>
+            if(!$(".todo-item").text()) {
+                $('#mess').hide();
+                // $("#btn-comp").hide();
+                // $("#ind").show();
+            }
+            else {
+                $("mess").show();
+            }
             if($(".check-box").is(':checked')) {
                 $.post('newCheck.php', (data) => {
                     if(data != 'error') {

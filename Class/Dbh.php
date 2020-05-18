@@ -12,8 +12,8 @@
             try
             {
                 $this->servername = "localhost";
-                $this->username = "";
-                $this->password = "";
+                $this->username = "jubaer";
+                $this->password = "jubaer997";
                 $this->dbname = "todolist";
                 
                 $dsn = "mysql:host={$this->servername};dbname={$this->dbname}";
