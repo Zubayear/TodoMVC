@@ -81,6 +81,7 @@ $obj = new Tasks();
             // if(!$())
             if(!$(".todo-item").text()) {
                 $('#mess').hide();
+                $('.yose').hide();
                 // $("#btn-comp").hide();
                 // $("#ind").show();
             }
@@ -118,7 +119,7 @@ $obj = new Tasks();
 
 
             if(!$(".todo-item").text()) {
-                $('.yose').hide();
+                
                 // $("#btn-comp").hide();
                 // $("#ind").show();
             }
