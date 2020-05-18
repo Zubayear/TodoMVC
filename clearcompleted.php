@@ -74,6 +74,15 @@ include 'Class/Tasks.php';
     <script src="js/jquery-3.2.1.min.js"></script>
     
     <script>
+            if(!$(".todo-item").text()) {
+                // $('#mess').show();
+                window.location.href = "index.php";
+                // $("#btn-comp").hide();
+                // $("#ind").show();
+            }
+            else {
+                $("mess").hide();
+            }
         
             // if($(".check-box").is(':checked')) {
             //     $.post('newCheck.php', (data) => {
@@ -89,15 +98,16 @@ include 'Class/Tasks.php';
             // $("#btn-comp").click(function() {
             //     $.post()
             // });
-            if(!$(".todo-item").text()) {
-                $('.yose').hide();
-                // $("#btn-comp").hide();
-                // $("#ind").show();
-            }
-            else {
-                $(".yose").show();
-                // $("#ind").hide();
-            }           
+            // if(!$(".todo-item").text()) {
+            //     // $('.yose').hide();
+            //     window.location.href("index.php");
+            //     // $("#btn-comp").hide();
+            //     // $("#ind").show();
+            // }
+            // else {
+            //     // $(".yose").show();
+            //     // $("#ind").hide();
+            // }           
             
             $('.remove-to-do').click(function(){
 

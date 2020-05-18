@@ -74,6 +74,7 @@ include 'Class/Tasks.php';
 </div>
 
     <script src="js/jquery-3.2.1.min.js"></script>
+
     
     <script>
             // $("#btn-comp").show();
@@ -84,7 +85,15 @@ include 'Class/Tasks.php';
                         else { $("#mess").text(data + " item left"); }
                     }
                 });
-            }              
+            }
+                if(!$(".todo-item").text()) {
+                $.post('newCheck.php', (data) => {
+                    if(data != 'error') {
+                        if(data > 1) { $("#mess").text(data + " items left");}
+                        else { $("#mess").text(data + " item left"); }
+                    }
+                });        
+    }              
             $(document).ready(function(){
             if(!$(".todo-item").text()) {
                 $('#btn-comp').hide();
