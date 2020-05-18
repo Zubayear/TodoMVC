@@ -34,7 +34,7 @@ include 'Class/Tasks.php';
           <form action="set.php" method="POST" autocomplete="off" required>
               <input type="text" 
                      name="name" 
-                     placeholder="What do you need to do?" autofocus/>
+                     placeholder="What needs to be done?" autofocus/>
           </form>
     </div>
 
@@ -74,15 +74,23 @@ include 'Class/Tasks.php';
     <script src="js/jquery-3.2.1.min.js"></script>
     
     <script>
-            if(!$(".todo-item").text()) {
-                // $('#mess').show();
-                window.location.href = "index.php";
-                // $("#btn-comp").hide();
-                // $("#ind").show();
-            }
-            else {
-                $("mess").hide();
-            }
+            // if(!$(".todo-item").text()) {
+            //     // $('#mess').show();
+            //     window.location.href = "index.php";
+            //     // $("#btn-comp").hide();
+            //     // $("#ind").show();
+            // }
+            // else {
+            //     $("mess").hide();
+            // }
+            // if(!$(".todo-item").text()) {
+            //     $.post('newCheck.php', (data) => {
+            //         if(data != 'error') {
+            //             if(data > 1) { $("#mess").text(data + " items left");}
+            //             else { $("#mess").text(data + " item left"); }
+            //         }
+            //     });        
+            // }             
         
             // if($(".check-box").is(':checked')) {
             //     $.post('newCheck.php', (data) => {

@@ -86,14 +86,14 @@ include 'Class/Tasks.php';
                     }
                 });
             }
-                if(!$(".todo-item").text()) {
+            if(!$(".todo-item").text()) {
                 $.post('newCheck.php', (data) => {
                     if(data != 'error') {
                         if(data > 1) { $("#mess").text(data + " items left");}
                         else { $("#mess").text(data + " item left"); }
                     }
                 });        
-    }              
+            }              
             $(document).ready(function(){
             if(!$(".todo-item").text()) {
                 $('#btn-comp').hide();
