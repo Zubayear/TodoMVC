@@ -37,6 +37,7 @@ require 'vendor/autoload.php';
 
        <?php 
           $todos = $obj->clearCompleted();
+          $todos = $obj->getAllTasks();
        ?>
        <div class="show-todo-section">
             <?php foreach($todos as $todo) { ?>
