@@ -37,7 +37,7 @@ require 'vendor/autoload.php';
 
        <?php 
           $todos = $obj->clearCompleted();
-          $todos = $obj->getAllTasks();
+        //   $todos = $obj->getAllTasks();
        ?>
        <div class="show-todo-section">
             <?php foreach($todos as $todo) { ?>
@@ -73,6 +73,14 @@ require 'vendor/autoload.php';
     
     <script>
             // if(!$(".todo-item").text()) {
+            //     $.post('newCheck.php', (data) => {
+            //         if(data != 'error') {
+            //             if(data > 1) { $("#mess").text(data + " items left");}
+            //             else { $("#mess").text(data + " item left"); }
+            //         }
+            //     });                
+            // }
+            // if(!$(".todo-item").text()) {
             //     // $('#mess').show();
             //     window.location.href = "index.php";
             //     // $("#btn-comp").hide();
@@ -81,10 +89,10 @@ require 'vendor/autoload.php';
             // else {
             //     $("mess").hide();
             // }
-            if(!$(".todo-item").text()) {
-                // .load('index.php');
-                window.location.href = "index.php";
-            }
+            // if(!$(".todo-item").text()) {
+            //     // .load('index.php');
+            //     window.location.href = "index.php";
+            // }
         
             // if($(".check-box").is(':checked')) {
             //     $.post('newCheck.php', (data) => {
@@ -129,7 +137,6 @@ require 'vendor/autoload.php';
 
             $(".check-box").click(function(e){
 
-                
                 const id = $(this).attr('data-todo-id');
                 // alert(id);
                 $.post('check.php', 
