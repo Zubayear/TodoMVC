@@ -1,6 +1,6 @@
 <?php
-include 'Class/Dbh.php';
-include 'Class/Tasks.php';
+require 'vendor/autoload.php';
+
 $obj = new Tasks();
     // echo $obj->items();
 ?>
@@ -78,6 +78,7 @@ $obj = new Tasks();
     <script src="js/jquery-3.2.1.min.js"></script>
 
     <script>
+            // if(!$())
             if(!$(".todo-item").text()) {
                 $('#mess').hide();
                 // $("#btn-comp").hide();
@@ -86,6 +87,7 @@ $obj = new Tasks();
             else {
                 $("mess").show();
             }
+            // Items left shown when we coming from other pages
             if($(".check-box").is(':checked')) {
                 $.post('newCheck.php', (data) => {
                     if(data != 'error') {
@@ -93,14 +95,19 @@ $obj = new Tasks();
                         else { $("#mess").text(data + " item left"); }
                     }
                 });
-            }        
+
+            }
+            // if(!$(".check-box").is(":checked")){
+            //     if("#btn-comp").click(function() {
+            //         window.location.href = "index.php";
+            //     });
+            // }    
+                
 
         
         // $(".todo-item").hide();
         // $("#btn-group-show").hide();
         $(document).ready(function(){
-            
-     
             
             $("#btn-comp").click(function() {
                 // alert(checkedValue);

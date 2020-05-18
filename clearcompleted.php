@@ -1,9 +1,6 @@
 <?php
-// require 'vendor/autoload.php';
-// use Todolist\Dbh;
-// use Todolist\Tasks;
-include 'Class/Dbh.php';
-include 'Class/Tasks.php';
+require 'vendor/autoload.php';
+
     $obj = new Tasks();
 ?>
 <!DOCTYPE html>
@@ -83,14 +80,10 @@ include 'Class/Tasks.php';
             // else {
             //     $("mess").hide();
             // }
-            // if(!$(".todo-item").text()) {
-            //     $.post('newCheck.php', (data) => {
-            //         if(data != 'error') {
-            //             if(data > 1) { $("#mess").text(data + " items left");}
-            //             else { $("#mess").text(data + " item left"); }
-            //         }
-            //     });        
-            // }             
+            if(!$(".todo-item").text()) {
+                // .load('index.php');
+                window.location.href = "index.php";
+            }
         
             // if($(".check-box").is(':checked')) {
             //     $.post('newCheck.php', (data) => {

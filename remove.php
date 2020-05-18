@@ -1,9 +1,5 @@
 <?php
-// require 'vendor/autoload.php';
-// use Todolist\Dbh;
-// use Todolist\Tasks;
-include 'Class/Dbh.php';
-include 'Class/Tasks.php';
+require 'vendor/autoload.php';
 $obj = new Tasks();
 if(isset($_POST['id']))
 {
