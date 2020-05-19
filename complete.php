@@ -65,7 +65,7 @@ require 'vendor/autoload.php';
                     
                     <a href="complete.php" class="btn btn-light">Completed</a>
 
-                    <a id="btn-comp" href="clearcompleted.php" class="btn btn-light">Clear completed</a>
+                    <a id="btn-comp" href="index.php" class="btn btn-light">Clear completed</a>
 
        </div>
 </div>
@@ -176,6 +176,30 @@ require 'vendor/autoload.php';
                       }
                 );
             });
+            // var ids = [];
+            $("#btn-comp").click(function() {
+                $.post("clearCompleted.php", (data) => {
+                    if(data > 1) { $("#mess").text(data + " items left"); }
+                    else { $("#mess").text(data + " item left"); }
+                    // alert(data);
+                });
+            });                
+            //     var ids = [];
+            //     $.each($("input[type='checkbox']:checked"), function() {
+            //         ids.push($(this).attr('data-todo-id'));
+            //     });
+            //     // .each()
+            //     var result = ids.map(Number);
+            //     alert(result);
+            //     // alert(ids[0]);
+            //     $("#btn-comp").click(function() {
+            //         $.post("clearCompleted.php", {ids: result}, (data) => {
+            //             alert(data);
+            //             // if(data > 1) { $("#mess").text(data + " items left"); }
+            //             // else { $("#mess").text(data + " item left"); }
+            //         });
+            //     });                
+            // });
 
             var id1;
             var value;

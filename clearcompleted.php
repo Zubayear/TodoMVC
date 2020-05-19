@@ -24,7 +24,6 @@ require 'vendor/autoload.php';
 
 <body>
 
-
 <div class="main-section">
        <div class="add-section">
        <h1 class="todos">todos</h1>

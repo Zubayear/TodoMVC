@@ -9,10 +9,7 @@ require 'vendor/autoload.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assests/css/bootstrap.css">
-    <!-- <link rel="stylesheet" href="css/all.min.css"> -->
-    <!-- <link rel="stylesheet" href="css/fontawesome.min.css"> -->
     <link rel="stylesheet" href="css/styles.css">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <title>Simple todolist</title>
         <script>
             document.getElementById('tasks')
@@ -23,7 +20,6 @@ require 'vendor/autoload.php';
             }
         });
     </script>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
 </head>
 
 <body>
@@ -65,7 +61,7 @@ require 'vendor/autoload.php';
                         <a href="index.php" class="btn btn-light">All</a>
                         <a href="active.php" class="btn btn-light">Active</a>
                         <a href="complete.php" class="btn btn-light">Completed</a>
-                        <a id="btn-comp" href="clearcompleted.php" class="btn btn-light">Clear completed</a>
+                        <a id="btn-comp" href="index.php" class="btn btn-light">Clear completed</a>
                     </div>   
         
        </div>
@@ -77,6 +73,14 @@ require 'vendor/autoload.php';
         $("#btn-comp").hide();
 
         $(document).ready(function(){
+            // if(("#btn-comp").click){
+            //     $.post("remove.php", {id:id}, (data) => {
+            //         if(data != 'error') { if(data[1] > 1) {
+            //             $("#mess").text(data[1] + " items left");
+            //         } }
+            //         else { $("#mess").text(data[1] + " item left");}
+            //     });
+            // }
             // $("#btn-comp").click(function() {
             //     $.post()
             // });
@@ -88,7 +92,14 @@ require 'vendor/autoload.php';
             // else {
             //     $(".yose").show();
             //     // $("#ind").hide();
-            // }            
+            // }
+                      
+            // $(".todo-item").click(function() {
+                
+            //     window.location.href = "active.php";
+            //     $("$btn-comp").hide();
+            // });
+
             
             $('.remove-to-do').click(function(){
 
@@ -113,6 +124,7 @@ require 'vendor/autoload.php';
                         else { $("#mess").text(data + " item left"); }
                     }
                 });
+
             }
             
             $(".check-box").click(function(e){
@@ -122,7 +134,9 @@ require 'vendor/autoload.php';
                 
 
                 if($(".check-box").is(':checked'))
+                    
                     $("#btn-comp").show();
+                    // window.location.href = "active.php";
                 else
                     $("#btn-comp").hide();
 
@@ -161,7 +175,8 @@ require 'vendor/autoload.php';
                                   }                                  
                               }
                           }
-                        //   window.location.href = "active.php";
+
+                            // window.location.href = "active.php";
                         // $.ajax({
                         //     url: "active.php",
                         //     context: document.body
@@ -172,6 +187,13 @@ require 'vendor/autoload.php';
                 );
                 
             });
+            $("#btn-comp").click(function() {
+                $.post("clearCompleted.php", (data) => {
+                    if(data > 1) { $("#mess").text(data + " items left"); }
+                    else { $("#mess").text(data + " item left"); }
+                    // alert(data);
+                });
+            });             
 
             // $("h2").click(function() {
             //     var id = $(this).attr('need');

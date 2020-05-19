@@ -55,7 +55,7 @@
 
             $stmt = $this->connect()->prepare($query);
             $stmt->execute([$taskId]);
-            return $num = $stmt->rowCount();
+            return $stmt->rowCount();
             // return $num;
         }
 
