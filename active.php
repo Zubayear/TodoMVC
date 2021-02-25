@@ -72,35 +72,7 @@ require 'vendor/autoload.php';
     <script>
         $("#btn-comp").hide();
 
-        $(document).ready(function(){
-            // if(("#btn-comp").click){
-            //     $.post("remove.php", {id:id}, (data) => {
-            //         if(data != 'error') { if(data[1] > 1) {
-            //             $("#mess").text(data[1] + " items left");
-            //         } }
-            //         else { $("#mess").text(data[1] + " item left");}
-            //     });
-            // }
-            // $("#btn-comp").click(function() {
-            //     $.post()
-            // });
-            // if(!$(".todo-item").text()) {
-            //     $('.yose').hide();
-            //     // $("#btn-comp").hide();
-            //     // $("#ind").show();
-            // }
-            // else {
-            //     $(".yose").show();
-            //     // $("#ind").hide();
-            // }
-                      
-            // $(".todo-item").click(function() {
-                
-            //     window.location.href = "active.php";
-            //     $("$btn-comp").hide();
-            // });
-
-            
+        $(document).ready(function(){     
             $('.remove-to-do').click(function(){
 
                 const id = $(this).attr('id');
@@ -129,14 +101,9 @@ require 'vendor/autoload.php';
             
             $(".check-box").click(function(e){
 
-                
-                // location.reload();
-                
-
                 if($(".check-box").is(':checked'))
                     
                     $("#btn-comp").show();
-                    // window.location.href = "active.php";
                 else
                     $("#btn-comp").hide();
 
@@ -147,12 +114,6 @@ require 'vendor/autoload.php';
                           id: id
                       },
                       (data) => {
-                        //   $.get('newCheck.php', id: id,
-                        //         function(data) {
-                        //             alert(data);
-                        //         }
-                        //     );
-                        // alert(data);
                           if(data != 'error'){
                               const h2 = $(this).next();
                               if(data[0] === '1'){
@@ -175,13 +136,6 @@ require 'vendor/autoload.php';
                                   }                                  
                               }
                           }
-
-                            // window.location.href = "active.php";
-                        // $.ajax({
-                        //     url: "active.php",
-                        //     context: document.body
-                        // });
-                        // location.reload();
                       }
                       
                 );
@@ -191,22 +145,14 @@ require 'vendor/autoload.php';
                 $.post("clearCompleted.php", (data) => {
                     if(data > 1) { $("#mess").text(data + " items left"); }
                     else { $("#mess").text(data + " item left"); }
-                    // alert(data);
                 });
-            });             
-
-            // $("h2").click(function() {
-            //     var id = $(this).attr('need');
-            //     alert(id);
-            // });
+            });        
             
             var id1;
             var value;
             $(function () {
                 
-            $("h2").each(function () {
-                // var id = document.getElementById("dawg");
-                
+            $("h2").each(function () {                
                 var label = $(this);
                 
                 
