@@ -2,7 +2,6 @@
 require 'vendor/autoload.php';
 
 $obj = new Tasks();
-    // echo $obj->items();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,10 +74,6 @@ $obj = new Tasks();
                         <a href="complete.php" class="btn btn-light">Completed</a>
                         <a id="btn-comp" href="index.php" class="btn btn-light">Clear completed</a>
                     </div>
-                    <!-- <form action="remove.php" method="post">
-                        <button id="btn-comp">Clear completed</button>
-                    </form> -->
-
         </div>
     </div>
 
@@ -88,8 +83,6 @@ $obj = new Tasks();
             if(!$(".todo-item").text()) {
                 $('#mess').hide();
                 $('.yose').hide();
-                // $("#btn-comp").hide();
-                // $("#ind").show();
             }
             else {
                 $("mess").show();
@@ -102,69 +95,18 @@ $obj = new Tasks();
                         else { $("#mess").text(data + " item left"); }
                     }
                 });
-                // $.post('check.php', 
-                //       {
-                //           id: id
-                //       },
-                //       (data) => {
-                //           if(data != 'error'){
-                //               const h2 = $(this).next();
-                //               if(data === '1'){                                
-                //                   h2.removeClass('checked');
-                //               }else {
-                //                   h2.addClass('checked');                                  
-                //               }
-                //           }
-                //       }
-                // );
             }
         $(document).ready(function(){
             
-            
-            //select all checkboxes
-            // ($("#toggle-all").change(function(){  //"select all" change 
-            //     var status = this.checked; // "select all" checked status
-            //     $('.check-box').each(function(){ //iterate all listed checkbox items
-            //         this.checked = status; //change ".checkbox" checked status
-            //     });
-            // });
-
-            // $('.check-box').change(function(){ //".checkbox" change 
-            //     //uncheck "select all", if one of the listed checkbox item is unchecked
-            //     if(this.checked == false){ //if this item is unchecked
-            //         $("#toggle-all")[0].checked = false; //change "select all" checked status to false
-            //     }
-                
-            //     //check "select all" if all checkbox items are checked
-            //     if ($('.check-box:checked').length == $('.check-box').length ){ 
-            //         $("#toglge-all")[0].checked = true; //change "select all" checked status to true
-            //     }
-            // });
-            
             $("#btn-comp").click(function() {
-                // alert(checkedValue);
-                // $.post("clearCompleted.php", {'data[]': checkedValue}, (data) => {
-                //     alert(data);
-                // });
             });
 
 
             if(!$(".todo-item").text()) {
-                
-                // $("#btn-comp").hide();
-                // $("#ind").show();
             }
             else {
                 $(".yose").show();
-                // $("#ind").hide();
             }
-            // $("#btn-comp").show();
-            // $("#btn-comp").click(function() {
-            //     $.post()
-            // });
-            // $("#btn-group-show").keyup(function() {
-            //     $("#btn-group-show").show();
-            // });
 
 
             $('.remove-to-do').click(function(){
@@ -195,19 +137,9 @@ $obj = new Tasks();
                     }
                 });
             }
-            // else($(".check-box").is(':checked')) {
-            //     $.post('newCheck.php', (data) => {
-            //         if(data != 'error') {
-            //             if(data > 1) { $("#mess").text(data) + " items left");}
-            //             else { $("#mess").text(data + " item left"); }
-            //         }
-            //     });
-            // }
 
                 
                 $(".check-box").click(function(e) {
-                    // var ids = [];
-                    // window.location.href = "index.php";
                 const id = $(this).attr('data-todo-id');
                 // ids.push(id);
                 if($(".check-box").is(':checked')){
@@ -223,12 +155,6 @@ $obj = new Tasks();
                           id: id
                       },
                       (data) => {
-                        //   $.get('newCheck.php', id: id,
-                        //         function(data) {
-                        //             alert(data);
-                        //         }
-                        //     );
-                        // alert(data);
                           if(data != 'error'){
                               const h2 = $(this).next();
                               if(data[0] === '1'){
@@ -255,30 +181,11 @@ $obj = new Tasks();
                          
                 );
 
-                // $("input[type='checkbox']").change(function() {
-                //     ids = $('input:checkbox:checked').map(function() {
-                //         return $(this).attr("data-todo-id");
-                //     }).get();
-                // });
-                // $.each($("input[type='checkbox']:checked"), function() {
-                //     ids.push($(this).attr('data-todo-id'));
-                // });
-                // // .each()
-                // var result = ids.map(Number);
-                // alert(result);
-                // alert(ids[0]);
-
             });
-            // var ids = [];
-            //     $.each($("input[type='checkbox']:checked"), function() {
-            //         ids.push($(this).attr('data-todo-id'));
-            //     });            
-            
             $("#btn-comp").click(function() {
                 $.post("clearCompleted.php", (data) => {
                     if(data > 1) { $("#mess").text(data + " items left"); }
                     else { $("#mess").text(data + " item left"); }
-                    // alert(data);
                 });
             });
 
@@ -286,24 +193,12 @@ $obj = new Tasks();
             var value;
             $(function () {
                 
-            $("h2").each(function () {
-                // var id = document.getElementById("dawg");
-                
-                var label = $(this);
-                
-                
-                label.after("<input type = 'text' style = 'display:none' />");
-        
-                
+            $("h2").each(function () {                
+                var label = $(this);    
+                label.after("<input type = 'text' style = 'display:none' />");                
                 var textbox = $(this).next();
-        
-
-                textbox[0].name = this.id.replace("lbl", "txt");
-        
-                
+                textbox[0].name = this.id.replace("lbl", "txt");        
                 textbox.val(label.html());
-        
-                
                 label.dblclick(function () {
                     $(this)
                     $(this).next().show();
@@ -342,9 +237,7 @@ $obj = new Tasks();
                         $(this).prev().show();
                         $(this).prev().prev().show();
                         value = this.value;
-                        
-                        // alert(value);
-                        // alert(id1);
+
                         $.post('edit.php', 
                           {
                               id: id1,
