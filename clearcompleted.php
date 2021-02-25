@@ -70,54 +70,8 @@ require 'vendor/autoload.php';
 
     <script src="js/jquery-3.2.1.min.js"></script>
     
-    <script>
-            // if(!$(".todo-item").text()) {
-            //     $.post('newCheck.php', (data) => {
-            //         if(data != 'error') {
-            //             if(data > 1) { $("#mess").text(data + " items left");}
-            //             else { $("#mess").text(data + " item left"); }
-            //         }
-            //     });                
-            // }
-            // if(!$(".todo-item").text()) {
-            //     // $('#mess').show();
-            //     window.location.href = "index.php";
-            //     // $("#btn-comp").hide();
-            //     // $("#ind").show();
-            // }
-            // else {
-            //     $("mess").hide();
-            // }
-            // if(!$(".todo-item").text()) {
-            //     // .load('index.php');
-            //     window.location.href = "index.php";
-            // }
-        
-            // if($(".check-box").is(':checked')) {
-            //     $.post('newCheck.php', (data) => {
-            //         if(data != 'error') {
-            //             if(data > 1) { $("#mess").text(data + " items left");}
-            //             else { $("#mess").text(data + " item left"); }
-            //         }
-            //     });
-            // } 
-            // window.location.href = "index.php";
-        $(document).ready(function(){
-            
-            // $("#btn-comp").click(function() {
-            //     $.post()
-            // });
-            // if(!$(".todo-item").text()) {
-            //     // $('.yose').hide();
-            //     window.location.href("index.php");
-            //     // $("#btn-comp").hide();
-            //     // $("#ind").show();
-            // }
-            // else {
-            //     // $(".yose").show();
-            //     // $("#ind").hide();
-            // }           
-            
+    <script>          
+        $(document).ready(function(){       
             $('.remove-to-do').click(function(){
 
                 const id = $(this).attr('id');
