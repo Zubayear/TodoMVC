@@ -5,24 +5,13 @@
         {
             $query = "SELECT * FROM tasks";
             $stmt = $this->connect()->query($query);
-
-            // while ($row = $result->fetch())
-            // {
-            //     echo $row['task_name'] . "</br>";
-            // }
             return $res = $stmt->fetchAll();
-            // foreach($res as $r)
-            // {
-            //     echo $r['task_name'] . "</br>";
-            // }
+
         }
 
         public function getLastInsetedTask()
         {
             $lastId = $this->connect()->query("SELECT MAX(id) FROM tasks");
-            // $query = "SELECT task_name FROM tasks WHERE id=$lastId";
-            // $stmt = $this->connect()->query($query);
-            // echo $stmt->fetch() . "</br>";
             echo $lastId;
         }
 
@@ -56,7 +45,6 @@
             $stmt = $this->connect()->prepare($query);
             $stmt->execute([$taskId]);
             return $stmt->rowCount();
-            // return $num;
         }
 
         public function todo()
@@ -93,11 +81,7 @@
             $todo = $stmt->fetch();
             $uId = $todo['id'];
             $checked = $todo['checked'];
-            // echo "{$uId}, {$checked}";
-
             $uChecked = $checked ? 0 : 1;
-            // echo $uChecked;
-
             $res = $this->connect()->query("UPDATE tasks SET checked=$uChecked WHERE id=$uId");
 
             if($res)
